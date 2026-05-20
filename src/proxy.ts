@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/request';
+import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const token = request.cookies.get('token')?.value;
   const { pathname } = request.nextUrl;
 
@@ -25,7 +25,7 @@ export function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-// Map middleware to only run on protected application entry points
+// Map proxy to only run on protected application entry points
 export const config = {
   matcher: ['/dashboard/:path*', '/login', '/register'],
 };
