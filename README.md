@@ -2,7 +2,7 @@
 
 Convo is a high-performance, real-time messaging application built on top of **Next.js 16**, **Socket.io**, and **MongoDB**. Featuring a sleek glassmorphic UI, it facilitates seamless instant communication, typing alerts, read receipts, and user presence management.
 
-![Convo Banner](./public/convo_banner.png)
+![Convo Banner](./public/convo_banner_v2.png)
 
 ## 🚀 Key Features
 
