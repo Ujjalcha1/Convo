@@ -22,7 +22,8 @@ import {
   Paperclip,
   Check,
   CheckCheck,
-  Globe
+  Globe,
+  AlertTriangle
 } from 'lucide-react';
 
 export default function DashboardPage() {
