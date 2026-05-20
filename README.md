@@ -1,8 +1,8 @@
-# 💬 Nexus Chat — Real-Time Messaging Platform
+# 💬 Convo — Real-Time Messaging Platform
 
-Nexus Chat is a high-performance, real-time messaging application built on top of **Next.js 16**, **Socket.io**, and **MongoDB**. Featuring a sleek glassmorphic UI, it facilitates seamless instant communication, typing alerts, read receipts, and user presence management.
+Convo is a high-performance, real-time messaging application built on top of **Next.js 16**, **Socket.io**, and **MongoDB**. Featuring a sleek glassmorphic UI, it facilitates seamless instant communication, typing alerts, read receipts, and user presence management.
 
-![Nexus Chat Banner](./public/chat_app_banner.png)
+![Convo Banner](./public/convo_banner.png)
 
 ## 🚀 Key Features
 
@@ -49,7 +49,7 @@ Nexus Chat is a high-performance, real-time messaging application built on top o
 │   │   └── connect.ts      # Database connection pooling
 │   ├── store/              # Zustand global states (auth, chat)
 │   ├── utils/              # Helper functions (JWT validation, helper methods)
-│   └── middleware.ts       # Next.js route protection middleware
+│   └── proxy.ts            # Next.js route protection proxy
 ├── server.ts               # Custom Node server merging Next.js & Socket.io
 ├── tsconfig.json           # TypeScript configuration
 └── .env                    # Environment variables (git-ignored)
@@ -69,8 +69,8 @@ Ensure you have the following installed on your machine:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/yourusername/chat-app.git
-    cd chat-app
+    git clone https://github.com/yourusername/convo.git
+    cd convo
     ```
 
 2.  **Install Dependencies:**
@@ -135,7 +135,7 @@ The custom server ([`server.ts`](./server.ts)) communicates with the client ([`S
 ## 🛡 Security & Best Practices
 
 1.  **HttpOnly JWT Cookies:** Authentication tokens are stored inside secure, client-inaccessible cookies preventing Cross-Site Scripting (XSS) token theft.
-2.  **Next.js Route Middleware Protection:** Routes under `/dashboard` are intercepted before rendering. Unauthenticated sessions are instantly redirected to `/login`.
+2.  **Next.js Route Proxy Protection:** Routes under `/dashboard` are intercepted before rendering. Unauthenticated sessions are instantly redirected to `/login`.
 3.  **Strict Data Schemas:** Schema validations implemented on both frontend forms and backend API endpoints using **Zod** models.
 4.  **Database Connection Pooling:** Database connection cached globally inside the hot reload server scope to prevent spawning redundant mongoose instances during local development.
 
