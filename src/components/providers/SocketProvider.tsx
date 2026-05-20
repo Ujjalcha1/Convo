@@ -15,8 +15,9 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
-    // Connect to WebSocket server running on same origin
-    const socketInstance = io(window.location.origin, {
+    // Connect to WebSocket server (supports external hosting e.g. on Render/Railway)
+    const socketUrl = process.env.NEXT_PUBLIC_SOCKET_URL || window.location.origin;
+    const socketInstance = io(socketUrl, {
       transports: ['websocket'],
       autoConnect: true,
     });
