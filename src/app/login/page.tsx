@@ -34,7 +34,7 @@ export default function LoginPage() {
       }
 
       setUser(data.user);
-      router.push('/dashboard');
+      window.location.href = '/dashboard';
     } catch (err: any) {
       setError(err.message || 'Invalid credentials provided');
     } finally {

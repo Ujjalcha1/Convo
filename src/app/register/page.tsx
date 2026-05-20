@@ -46,7 +46,7 @@ export default function RegisterPage() {
       }
 
       setUser(data.user);
-      router.push('/dashboard');
+      window.location.href = '/dashboard';
     } catch (err: any) {
       setError(err.message || 'An error occurred during registration');
     } finally {

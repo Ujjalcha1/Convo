@@ -243,7 +243,7 @@ export default function DashboardPage() {
   // Logout handler
   const handleLogout = async () => {
     await logout();
-    router.push('/login');
+    window.location.href = '/login';
   };
 
   // Filter conversations based on sidebar search input
